@@ -1,0 +1,29 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1a1a2e', 'primaryTextColor': '#eee', 'primaryBorderColor': '#444', 'lineColor': '#666', 'secondaryColor': '#16213e' } } }%%
+flowchart LR
+    A[Sensor Feeds<br/>AIS, ADS-B, Weather<br/>Port, Cyber, Radio] --> B[Ingestion<br/>Parse & Normalize]
+    B --> C[Entity Resolution<br/>Exact ID + Fuzzy Name<br/>+ Geo-Temporal]
+    C --> D[Unified Tracks<br/>Entity + Observations]
+    D --> E[Anomaly Detection<br/>Rule-Based + Statistical]
+    E --> F[Ontology Graph<br/>Nodes & Edges]
+    F --> G[AI Analyst<br/>Retrieval + Citations]
+    E --> H[Action Proposal<br/>Human Review Queue]
+    H --> I{Approve?}
+    I -->|Yes| J[Execute Action]
+    I -->|No| K[Reject + Reason]
+    J --> L[Audit Log<br/>Hash-Chained]
+    K --> L
+    G -.->|Query| D
+    G -.->|Query| E
+    
+    style A fill:#0f3460,color:#fff
+    style B fill:#16213e,color:#fff
+    style C fill:#1a1a2e,color:#fff
+    style D fill:#16213e,color:#fff
+    style E fill:#e94560,color:#fff
+    style F fill:#0f3460,color:#fff
+    style G fill:#16213e,color:#fff
+    style H fill:#e94560,color:#fff
+    style I fill:#1a1a2e,color:#fff
+    style J fill:#4a9eff,color:#fff
+    style K fill:#666,color:#fff
+    style L fill:#222,color:#fff

@@ -1,0 +1,24 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1a1a2e', 'primaryTextColor': '#eee', 'primaryBorderColor': '#444', 'lineColor': '#666' } } }%%
+flowchart TB
+    subgraph Browser["🌐 Browser"]
+        NextJS[Next.js App :3000]
+        MapLibre[MapLibre GL]
+        Cytoscape[Cytoscape.js]
+    end
+    
+    subgraph Backend["⚡ FastAPI Server"]
+        API[REST + WebSocket :8000]
+        Services[Core Services]
+    end
+    
+    subgraph Database["💾 SQLite"]
+        DB[(aegisgraph.db)]
+    end
+    
+    NextJS <-->|HTTP/WS| API
+    API <--> Services
+    Services <--> DB
+    
+    style Browser fill:#16213e,color:#fff
+    style Backend fill:#0f3460,color:#fff
+    style Database fill:#1a1a2e,color:#fff

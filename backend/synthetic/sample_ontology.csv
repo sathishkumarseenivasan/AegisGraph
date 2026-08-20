@@ -1,0 +1,11 @@
+id,name,email,company_id,company_name,department,role,salary,start_date,location,is_manager
+E001,John Smith,john.smith@example.com,C001,Acme Corporation,Engineering,Senior Engineer,95000,2020-01-15,New York,true
+E002,Jane Doe,jane.doe@example.com,C001,Acme Corporation,Engineering,Software Engineer,78000,2021-03-20,New York,false
+E003,Bob Johnson,bob.j@example.com,C002,TechStart Inc,Sales,Sales Manager,82000,2019-07-10,Chicago,true
+E004,Alice Williams,alice.w@example.com,C002,TechStart Inc,Sales,Account Executive,65000,2022-02-28,Chicago,false
+E005,Charlie Brown,charlie.b@example.com,C003,Global Services,HR,HR Director,88000,2018-11-05,Boston,true
+E006,Diana Ross,diana.r@example.com,C003,Global Services,HR,Recruiter,58000,2023-01-10,Boston,false
+E007,Edward Chen,edward.c@example.com,C001,Acme Corporation,Engineering,Staff Engineer,115000,2017-06-01,San Francisco,false
+E008,Fiona Garcia,fiona.g@example.com,C004,Innovation Labs,Research,Research Scientist,92000,2020-09-15,Seattle,true
+E009,George Wilson,george.w@example.com,C004,Innovation Labs,Research,Lab Technician,55000,2022-08-22,Seattle,false
+E010,Helen Martinez,helen.m@example.com,C002,TechStart Inc,Marketing,Marketing Director,85000,2019-04-18,Chicago,true

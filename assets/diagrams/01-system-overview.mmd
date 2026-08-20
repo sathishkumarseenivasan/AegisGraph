@@ -1,0 +1,70 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1a1a2e', 'primaryTextColor': '#eee', 'primaryBorderColor': '#444', 'lineColor': '#666', 'secondaryColor': '#16213e', 'tertiaryColor': '#0f3460' } } }%%
+flowchart TD
+    subgraph Client["🖥️ Client Layer"]
+        Browser[Web Browser]
+        MapView[Map View]
+        GraphView[Graph Explorer]
+        AnalystUI[AI Analyst Chat]
+        AuditUI[Audit Timeline]
+    end
+
+    subgraph API["🔌 API Layer (FastAPI :8000)"]
+        REST[REST Endpoints]
+        WS[WebSocket Handler]
+        Auth[Auth Middleware]
+        Validate[Pydantic Validation]
+    end
+
+    subgraph Core["⚙️ Core Services"]
+        Ingest[Data Ingestion]
+        Resolve[Entity Resolver]
+        Detect[Anomaly Engine]
+        Graph[Ontology Builder]
+        LLM[AI Analyst]
+        Govern[Governance]
+        AuditSvc[Audit Service]
+    end
+
+    subgraph Data["💾 Data Layer (SQLite)"]
+        Entities[(Entities)]
+        Observations[(Observations)]
+        Anomalies[(Anomalies)]
+        Actions[(Actions)]
+        Rules[(Rules)]
+        AuditLog[(Audit Events)]
+    end
+
+    Browser -->|HTTP/REST| REST
+    Browser -->|WebSocket| WS
+    REST --> Validate
+    Validate --> Auth
+    Auth --> Core
+    
+    WS -->|Live Updates| Browser
+    
+    Ingest --> Resolve
+    Resolve --> Detect
+    Detect --> Graph
+    Graph --> LLM
+    Detect --> Govern
+    Govern --> AuditSvc
+    
+    Ingest -.->|Write| Observations
+    Resolve -.->|Read/Write| Entities
+    Detect -.->|Write| Anomalies
+    Govern -.->|Write| Actions
+    AuditSvc -.->|Append| AuditLog
+    
+    REST -.->|Query| Entities
+    REST -.->|Query| Anomalies
+    REST -.->|Query| Actions
+    
+    classDef client fill:#16213e,stroke:#4a9eff,color:#fff
+    classDef api fill:#0f3460,stroke:#4a9eff,color:#fff
+    classDef core fill:#1a1a2e,stroke:#e94560,color:#fff
+    classDef data fill:#222,stroke:#666,color:#aaa
+    
+    class Browser,MapView,GraphView,AnalystUI,AuditUI client
+    class REST,WS,Auth,Validate api
+    class Ingest,Resolve,Detect,Graph,LLM,Govern,AuditSvc core
+    class Entities,Observations,Anomalies,Actions,Rules,AuditLog data

@@ -1,0 +1,33 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1a1a2e', 'primaryTextColor': '#eee', 'primaryBorderColor': '#444', 'lineColor': '#666' } } }%%
+sequenceDiagram
+    participant U as User
+    participant A as API Gateway
+    participant R as Retriever
+    participant P as Policy Check
+    participant L as LLM/Mock
+    participant C as Citation Assembler
+    participant D as Audit Log
+
+    U->>A: POST /ask {query}
+    A->>R: Search entities/anomalies/observations
+    R-->>A: Retrieved evidence (top-K)
+    
+    alt No evidence found
+        A->>U: Return "Insufficient evidence"
+        A->>D: Log query + empty result
+    else Evidence exists
+        A->>P: Validate grounding policy
+        P-->>A: Policy approved
+        
+        A->>L: Generate response with grounded prompt
+        L-->>A: Response + citations
+        
+        A->>C: Format with citations/confidence
+        C-->>A: Formatted answer
+        
+        A->>D: Log query + response hash
+        A->>U: Return {answer, citations, confidence, limitations}
+    end
+
+    Note over A,D: All steps logged to audit trail
+    Note over L: Mock used if no API key

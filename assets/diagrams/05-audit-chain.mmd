@@ -1,0 +1,31 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1a1a2e', 'primaryTextColor': '#eee', 'primaryBorderColor': '#444', 'lineColor': '#666' } } }%%
+flowchart LR
+    subgraph Event1["Event N-1"]
+        PH[previous_hash]
+        CH1[current_hash N-1]
+    end
+    
+    subgraph EventN["Event N"]
+        ID[event_id]
+        TS[timestamp]
+        ACT[actor]
+        A[action]
+        P[payload]
+        PH2[previous_hash = CH1]
+        CH2[current_hash = SHA256...]
+    end
+    
+    subgraph EventN1["Event N+1"]
+        PH3[previous_hash = CH2]
+        CH3[current_hash]
+    end
+    
+    CH1 --> PH2
+    CH2 --> PH3
+    
+    style Event1 fill:#16213e,color:#fff
+    style EventN fill:#e94560,color:#fff
+    style EventN1 fill:#16213e,color:#fff
+    style CH1 fill:#4a9eff,color:#fff
+    style CH2 fill:#4a9eff,color:#fff
+    style CH3 fill:#4a9eff,color:#fff
