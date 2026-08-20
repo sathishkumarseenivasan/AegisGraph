@@ -1,0 +1,93 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#1a1a2e', 'primaryTextColor': '#eee', 'primaryBorderColor': '#444', 'lineColor': '#666' } } }%%
+erDiagram
+    ENTITY ||--o{ OBSERVATION : "has"
+    ENTITY ||--o{ ANOMALY : "triggers"
+    ENTITY ||--o{ ACTION : "generates"
+    ENTITY {
+        uuid id PK
+        string name
+        EntityType type
+        string external_id
+        float latitude
+        float longitude
+        datetime created_at
+        datetime last_seen
+        float confidence_score
+        json attributes
+    }
+    
+    OBSERVATION ||--o| SENSOR_FEED : "from"
+    OBSERVATION {
+        uuid id PK
+        uuid entity_id FK
+        SourceType source_type
+        datetime timestamp
+        float latitude
+        float longitude
+        float altitude
+        float speed
+        float heading
+        json raw_data
+        float quality_score
+    }
+    
+    SENSOR_FEED {
+        uuid id PK
+        string name
+        SourceType source_type
+        int ingestion_rate
+        datetime last_heartbeat
+        FeedStatus status
+    }
+    
+    ANOMALY ||--o| RULE : "triggered_by"
+    ANOMALY ||--|| ACTION : "escalates_to"
+    ANOMALY {
+        uuid id PK
+        uuid entity_id FK
+        AnomalyType anomaly_type
+        Severity severity
+        float score
+        json triggered_rules
+        json evidence_ids
+        text explanation
+        text recommended_action
+        float uncertainty
+        datetime detected_at
+        AnomalyStatus status
+    }
+    
+    RULE {
+        uuid id PK
+        string name
+        text description
+        RuleType rule_type
+        json parameters
+        bool enabled
+        string version
+    }
+    
+    ACTION ||--o| AUDIT_EVENT : "logged_in"
+    ACTION {
+        uuid id PK
+        uuid anomaly_id FK
+        ActionType action_type
+        text description
+        string proposed_by
+        ActionStatus status
+        string approved_by
+        datetime approved_at
+        text rejection_reason
+        datetime executed_at
+    }
+    
+    AUDIT_EVENT {
+        uuid id PK
+        string event_id
+        datetime timestamp
+        string actor
+        string action
+        json payload
+        string previous_hash
+        string current_hash
+    }

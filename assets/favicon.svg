@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <filter id="nodeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="noGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="0"/>
+    </filter>
+  </defs>
+  <!-- Cross-bracing lines -->
+  <line x1="57.20" y1="15.20" x2="12.40" y2="51.60" stroke="#22D3EE" stroke-width="1" opacity="0.3" />
+  <line x1="49.82" y1="29.06" x2="21.61" y2="52.00" stroke="#22D3EE" stroke-width="1" opacity="0.3" />
+  <line x1="32.00" y1="34.80" x2="32.00" y2="52.40" stroke="#22D3EE" stroke-width="1" opacity="0.3" />
+  <line x1="14.18" y1="29.06" x2="35.46" y2="52.80" stroke="#22D3EE" stroke-width="1" opacity="0.3" />
+  <line x1="12.40" y1="51.60" x2="57.20" y2="15.20" stroke="#22D3EE" stroke-width="1" opacity="0.3" />
+  <line x1="21.61" y1="52.00" x2="49.82" y2="29.06" stroke="#22D3EE" stroke-width="1" opacity="0.3" />
+  <line x1="32.00" y1="52.40" x2="32.00" y2="34.80" stroke="#22D3EE" stroke-width="1" opacity="0.3" />
+  <line x1="35.46" y1="52.80" x2="14.18" y2="29.06" stroke="#22D3EE" stroke-width="1" opacity="0.3" />
+
+  <!-- Outer to inner connections -->
+  <line x1="57.20" y1="15.20" x2="45.86" y2="22.76" stroke="#22D3EE" stroke-width="1.5" opacity="0.5" />
+  <line x1="49.82" y1="29.06" x2="38.93" y2="32.10" stroke="#22D3EE" stroke-width="1.5" opacity="0.5" />
+  <line x1="32.00" y1="34.80" x2="25.07" y2="32.10" stroke="#22D3EE" stroke-width="1.5" opacity="0.5" />
+  <line x1="14.18" y1="29.06" x2="21.22" y2="42.78" stroke="#22D3EE" stroke-width="1.5" opacity="0.5" />
+  <line x1="12.40" y1="51.60" x2="28.41" y2="38.27" stroke="#22D3EE" stroke-width="1.5" opacity="0.5" />
+  <line x1="21.61" y1="52.00" x2="33.80" y2="33.77" stroke="#22D3EE" stroke-width="1.5" opacity="0.5" />
+  <line x1="32.00" y1="52.40" x2="45.86" y2="22.76" stroke="#22D3EE" stroke-width="1.5" opacity="0.5" />
+  <line x1="35.46" y1="52.80" x2="38.93" y2="32.10" stroke="#22D3EE" stroke-width="1.5" opacity="0.5" />
+
+  <!-- Inner to core connections -->
+  <line x1="45.86" y1="22.76" x2="32.00" y2="17.00" stroke="#22D3EE" stroke-width="1.5" opacity="0.6" />
+  <line x1="38.93" y1="32.10" x2="44.99" y2="24.50" stroke="#22D3EE" stroke-width="1.5" opacity="0.6" />
+  <line x1="25.07" y1="32.10" x2="44.99" y2="39.50" stroke="#22D3EE" stroke-width="1.5" opacity="0.6" />
+  <line x1="21.22" y1="42.78" x2="32.00" y2="47.00" stroke="#22D3EE" stroke-width="1.5" opacity="0.6" />
+  <line x1="28.41" y1="38.27" x2="19.01" y2="39.50" stroke="#22D3EE" stroke-width="1.5" opacity="0.6" />
+  <line x1="33.80" y1="33.77" x2="19.01" y2="24.50" stroke="#22D3EE" stroke-width="1.5" opacity="0.6" />
+
+  <!-- Core to center connections -->
+  <line x1="32.00" y1="17.00" x2="32.00" y2="32.00" stroke="#F59E0B" stroke-width="1.5" opacity="0.8" />
+  <line x1="44.99" y1="24.50" x2="32.00" y2="32.00" stroke="#F59E0B" stroke-width="1.5" opacity="0.8" />
+  <line x1="44.99" y1="39.50" x2="32.00" y2="32.00" stroke="#F59E0B" stroke-width="1.5" opacity="0.8" />
+  <line x1="32.00" y1="47.00" x2="32.00" y2="32.00" stroke="#F59E0B" stroke-width="1.5" opacity="0.8" />
+  <line x1="19.01" y1="39.50" x2="32.00" y2="32.00" stroke="#F59E0B" stroke-width="1.5" opacity="0.8" />
+  <line x1="19.01" y1="24.50" x2="32.00" y2="32.00" stroke="#F59E0B" stroke-width="1.5" opacity="0.8" />
+
+  <!-- Core interconnections -->
+  <line x1="32.00" y1="17.00" x2="44.99" y2="24.50" stroke="#F59E0B" stroke-width="1.5" opacity="0.7" />
+  <line x1="44.99" y1="24.50" x2="44.99" y2="39.50" stroke="#F59E0B" stroke-width="1.5" opacity="0.7" />
+  <line x1="44.99" y1="39.50" x2="32.00" y2="47.00" stroke="#F59E0B" stroke-width="1.5" opacity="0.7" />
+  <line x1="32.00" y1="47.00" x2="19.01" y2="39.50" stroke="#F59E0B" stroke-width="1.5" opacity="0.7" />
+  <line x1="19.01" y1="39.50" x2="19.01" y2="24.50" stroke="#F59E0B" stroke-width="1.5" opacity="0.7" />
+  <line x1="19.01" y1="24.50" x2="32.00" y2="17.00" stroke="#F59E0B" stroke-width="1.5" opacity="0.7" />
+
+  <!-- Outer ring edges -->
+  <line x1="57.20" y1="15.20" x2="49.82" y2="29.06" stroke="#22D3EE" stroke-width="1.5" />
+  <line x1="49.82" y1="29.06" x2="32.00" y2="34.80" stroke="#22D3EE" stroke-width="1.5" />
+  <line x1="32.00" y1="34.80" x2="14.18" y2="29.06" stroke="#22D3EE" stroke-width="1.5" />
+  <line x1="14.18" y1="29.06" x2="12.40" y2="51.60" stroke="#22D3EE" stroke-width="1.5" />
+  <line x1="12.40" y1="51.60" x2="21.61" y2="52.00" stroke="#22D3EE" stroke-width="1.5" />
+  <line x1="21.61" y1="52.00" x2="32.00" y2="52.40" stroke="#22D3EE" stroke-width="1.5" />
+  <line x1="32.00" y1="52.40" x2="35.46" y2="52.80" stroke="#22D3EE" stroke-width="1.5" />
+  <line x1="35.46" y1="52.80" x2="57.20" y2="15.20" stroke="#22D3EE" stroke-width="1.5" />
+
+  <!-- Inner ring edges -->
+  <line x1="45.86" y1="22.76" x2="38.93" y2="32.10" stroke="#22D3EE" stroke-width="1.5" opacity="0.7" />
+  <line x1="38.93" y1="32.10" x2="25.07" y2="32.10" stroke="#22D3EE" stroke-width="1.5" opacity="0.7" />
+  <line x1="25.07" y1="32.10" x2="21.22" y2="42.78" stroke="#22D3EE" stroke-width="1.5" opacity="0.7" />
+  <line x1="21.22" y1="42.78" x2="28.41" y2="38.27" stroke="#22D3EE" stroke-width="1.5" opacity="0.7" />
+  <line x1="28.41" y1="38.27" x2="33.80" y2="33.77" stroke="#22D3EE" stroke-width="1.5" opacity="0.7" />
+  <line x1="33.80" y1="33.77" x2="45.86" y2="22.76" stroke="#22D3EE" stroke-width="1.5" opacity="0.7" />
+
+  <!-- Outer nodes -->
+  <circle cx="57.20" cy="15.20" r="3" fill="#22D3EE" filter="url(#noGlow)" />
+  <circle cx="49.82" cy="29.06" r="3" fill="#22D3EE" filter="url(#noGlow)" />
+  <circle cx="32.00" cy="34.80" r="3" fill="#22D3EE" filter="url(#noGlow)" />
+  <circle cx="14.18" cy="29.06" r="3" fill="#22D3EE" filter="url(#noGlow)" />
+  <circle cx="12.40" cy="51.60" r="3" fill="#22D3EE" filter="url(#noGlow)" />
+  <circle cx="21.61" cy="52.00" r="3" fill="#22D3EE" filter="url(#noGlow)" />
+  <circle cx="32.00" cy="52.40" r="3" fill="#22D3EE" filter="url(#noGlow)" />
+  <circle cx="35.46" cy="52.80" r="3" fill="#22D3EE" filter="url(#noGlow)" />
+
+  <!-- Inner nodes -->
+  <circle cx="45.86" cy="22.76" r="2" fill="#22D3EE" filter="url(#noGlow)" opacity="0.9" />
+  <circle cx="38.93" cy="32.10" r="2" fill="#22D3EE" filter="url(#noGlow)" opacity="0.9" />
+  <circle cx="25.07" cy="32.10" r="2" fill="#22D3EE" filter="url(#noGlow)" opacity="0.9" />
+  <circle cx="21.22" cy="42.78" r="2" fill="#22D3EE" filter="url(#noGlow)" opacity="0.9" />
+  <circle cx="28.41" cy="38.27" r="2" fill="#22D3EE" filter="url(#noGlow)" opacity="0.9" />
+  <circle cx="33.80" cy="33.77" r="2" fill="#22D3EE" filter="url(#noGlow)" opacity="0.9" />
+
+  <!-- Core nodes -->
+  <circle cx="32.00" cy="17.00" r="1.5" fill="#F59E0B" filter="url(#noGlow)" />
+  <circle cx="44.99" cy="24.50" r="1.5" fill="#F59E0B" filter="url(#noGlow)" />
+  <circle cx="44.99" cy="39.50" r="1.5" fill="#F59E0B" filter="url(#noGlow)" />
+  <circle cx="32.00" cy="47.00" r="1.5" fill="#F59E0B" filter="url(#noGlow)" />
+  <circle cx="19.01" cy="39.50" r="1.5" fill="#F59E0B" filter="url(#noGlow)" />
+  <circle cx="19.01" cy="24.50" r="1.5" fill="#F59E0B" filter="url(#noGlow)" />
+
+  <!-- Center node -->
+  <circle cx="32.00" cy="32.00" r="4" fill="#F59E0B" filter="url(#noGlow)" />
+</svg>
