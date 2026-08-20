@@ -611,4 +611,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-*Built with ❤️ by [Your Name]. Last updated: January 2025.*
+*Built with ❤️ by SATHISHKUMAR. Last updated: January 2025.*
